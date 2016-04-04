@@ -19,7 +19,7 @@ import java.io.IOException;
  *
  * @author este_
  */
-public class Pelota extends Application {
+public class init extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
