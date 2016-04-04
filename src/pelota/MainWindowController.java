@@ -7,12 +7,16 @@ package pelota;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.animation.ScaleTransition;
+import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Background;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 /**
  * FXML Controller class
@@ -48,4 +52,35 @@ public class MainWindowController implements Initializable {
         stage.close();
     }
     
+    @FXML
+    public void addAction(ActionEvent evt){
+        stall(btnadd,500,-0.7);
+        ttally(btnadd,500,250);
+        
+    }
+    
+    public void ttally(Node n,int t,int y){
+        TranslateTransition ttadd = new TranslateTransition();
+        ttadd.setByY(y);
+        ttadd.setDuration(Duration.millis(t));
+        ttadd.setNode(n);
+        ttadd.play();
+    }
+    
+    public void ttallx(Node n,int t,double x){
+        TranslateTransition ttadd = new TranslateTransition();
+        ttadd.setByX(x);
+        ttadd.setDuration(Duration.millis(t));
+        ttadd.setNode(n);
+        ttadd.play();
+    }
+    
+    public void stall(Node n,int t,double a){
+        ScaleTransition stall = new ScaleTransition();
+        stall.setNode(n);
+        stall.setByX(a);
+        stall.setByY(a);
+        stall.setDuration(Duration.millis(t));
+        stall.play();
+    }
 }
