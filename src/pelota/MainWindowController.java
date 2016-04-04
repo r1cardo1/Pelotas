@@ -35,6 +35,8 @@ public class MainWindowController implements Initializable {
     Button btnsearch;
     @FXML
     Button btnadmin;
+    @FXML
+    Button btnhome;
     Boolean up = false;
     
     @Override
@@ -45,6 +47,7 @@ public class MainWindowController implements Initializable {
         btnadd.setBackground(Background.EMPTY);
         btnsearch.setBackground(Background.EMPTY);
         btnadmin.setBackground(Background.EMPTY);
+        btnhome.setBackground(Background.EMPTY);
     }    
     
     @FXML
@@ -55,12 +58,22 @@ public class MainWindowController implements Initializable {
     
     @FXML
     public void addAction(ActionEvent evt){
-        if(!up){
-            btnmove(btnadd,300,-100,-200,-0.5);
-            btnmove(btnsearch,300,-300,-200,-0.5);
-            btnmove(btnadmin,300,150,-386,-0.5);
-            up = true;
-        }
+        moveup();
+    }
+    
+    @FXML
+    public void searchAction(ActionEvent evt){
+        moveup();
+    }
+    
+    @FXML
+    public void adminAction(ActionEvent evt){
+        moveup();
+    }
+    
+    @FXML
+    public void homeAction(ActionEvent evt){
+        movedown();
     }
     
     public void ttally(Node n,int t,double y){
@@ -92,5 +105,23 @@ public class MainWindowController implements Initializable {
         stall(n,t,s);
         ttally(n,t,y);
         ttallx(n,t,x);        
+    }
+    
+    public void moveup(){
+        if(!up){
+            btnmove(btnadd,300,-100,-200,-0.5);
+            btnmove(btnsearch,300,-300,-200,-0.5);
+            btnmove(btnadmin,300,150,-386,-0.5);
+            up = true;
+        }
+    }
+    
+    public void movedown(){
+        if(up){
+            btnmove(btnadd,300,100,200,0.5);
+            btnmove(btnsearch,300,300,200,0.5);
+            btnmove(btnadmin,300,-150,386,0.5);
+            up = false;
+        }
     }
 }

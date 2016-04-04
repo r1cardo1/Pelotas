@@ -66,3 +66,12 @@ and open the template in the editor.
     -fx-border-color: gray;
     -fx-border-radius: 20px;
 }
+
+.home-icon{
+    -fx-graphic: url("home-icon.png");
+}
+
+.home-icon:hover{
+    -fx-graphic: url("home-icon-focus.png");
+}
+
