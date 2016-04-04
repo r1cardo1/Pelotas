@@ -7,9 +7,19 @@ package Controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.animation.RotateTransition;
+import javafx.animation.ScaleTransition;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.PhongMaterial;
+import javafx.scene.shape.Sphere;
+import javafx.scene.transform.Rotate;
+import javafx.util.Duration;
 
 /**
  * FXML Controller class
@@ -19,11 +29,25 @@ import javafx.scene.layout.Pane;
 public class SelectFactoryWindowController implements Initializable {
 
     @FXML
-    Pane pnswaps1;
+    Button btnselect;
+    @FXML
+    Button btnback;
+    
+    
+    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+        
+    }
     
+    @FXML
+    public void focusInAction(ActionEvent evt){
+        ScaleTransition st = new ScaleTransition();
+        st.setNode((Node)evt.getSource());
+        st.setDuration(Duration.millis(100));
+        st.setByX(0.1);
+        st.setByY(0.1);
+        st.play();
+    }
 }

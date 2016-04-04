@@ -9,8 +9,11 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import Controller.MainWindowController;
+import java.io.IOException;
 
 /**
  *
@@ -20,7 +23,7 @@ public class Pelota extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/FXML/MainWindow.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/FXML/main.fxml"));
         
         Scene scene = new Scene(root);
         scene.setFill(null);
@@ -29,9 +32,7 @@ public class Pelota extends Application {
         stage.show();
     }
 
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
         launch(args);
     }
