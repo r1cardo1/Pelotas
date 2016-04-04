@@ -35,6 +35,7 @@ public class MainWindowController implements Initializable {
     Button btnsearch;
     @FXML
     Button btnadmin;
+    Boolean up = false;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -54,12 +55,15 @@ public class MainWindowController implements Initializable {
     
     @FXML
     public void addAction(ActionEvent evt){
-        stall(btnadd,500,-0.7);
-        ttally(btnadd,500,250);
-        
+        if(!up){
+            btnmove(btnadd,300,-100,-200,-0.5);
+            btnmove(btnsearch,300,-300,-200,-0.5);
+            btnmove(btnadmin,300,150,-386,-0.5);
+            up = true;
+        }
     }
     
-    public void ttally(Node n,int t,int y){
+    public void ttally(Node n,int t,double y){
         TranslateTransition ttadd = new TranslateTransition();
         ttadd.setByY(y);
         ttadd.setDuration(Duration.millis(t));
@@ -82,5 +86,11 @@ public class MainWindowController implements Initializable {
         stall.setByY(a);
         stall.setDuration(Duration.millis(t));
         stall.play();
+    }
+    
+    public void btnmove(Node n,int t,double x, double y,double s){
+        stall(n,t,s);
+        ttally(n,t,y);
+        ttallx(n,t,x);        
     }
 }
