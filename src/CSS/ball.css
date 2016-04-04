@@ -9,69 +9,69 @@ and open the template in the editor.
 */
 
 .border-background{
-    -fx-background-image: url("border.png");
+    -fx-background-image: url("/images/border.png");
     -fx-background-size: contain;
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
 }
 
 .close-icon{
-    -fx-graphic: url("Close-icon.png");
+    -fx-graphic: url("/images/Close-icon.png");
 }
 
 .close-icon:hover{
-    -fx-graphic: url("Close-icon-focus.png");
+    -fx-graphic: url("/images/Close-icon-focus.png");
 }
 
 .minimize-icon{
-    -fx-graphic: url("Minimize-icon.png");
+    -fx-graphic: url("/images/Minimize-icon.png");
 }
 
 .minimize-icon:hover{
-    -fx-graphic: url("Minimize-icon-focus.png");
+    -fx-graphic: url("/images/Minimize-icon-focus.png");
 }
 
 .add-icon{
-    -fx-graphic: url("add-icon.png");
+    -fx-graphic: url("/images/add-icon.png");
     -fx-border-color: white;
     -fx-border-radius: 20px;
 }
 
 .add-icon:hover{
-    -fx-graphic: url("add-icon-focus.png");
+    -fx-graphic: url("/images/add-icon-focus.png");
     -fx-border-color: gray;
     -fx-border-radius: 20px;
 }
 
 .search-icon{
-    -fx-graphic: url("search-icon.png");
+    -fx-graphic: url("/images/search-icon.png");
     -fx-border-color: white;
     -fx-border-radius: 20px;
 }
 
 .search-icon:hover{
-    -fx-graphic: url("search-icon-focus.png");
+    -fx-graphic: url("/images/search-icon-focus.png");
     -fx-border-color: gray;
     -fx-border-radius: 20px;
 }
 
 .admin-icon{
-    -fx-graphic: url("settings-icon.png");
+    -fx-graphic: url("/images/settings-icon.png");
     -fx-border-color: white;
     -fx-border-radius: 20px;
 }
 
 .admin-icon:hover{
-    -fx-graphic: url("settings-icon-focus.png");
+    -fx-graphic: url("/images/settings-icon-focus.png");
     -fx-border-color: gray;
     -fx-border-radius: 20px;
 }
 
 .home-icon{
-    -fx-graphic: url("home-icon.png");
+    -fx-graphic: url("/images/home-icon.png");
 }
 
 .home-icon:hover{
-    -fx-graphic: url("home-icon-focus.png");
+    -fx-graphic: url("/images/home-icon-focus.png");
 }
 
