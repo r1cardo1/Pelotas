@@ -20,7 +20,7 @@ public class Pelota extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("MainWindow.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/FXML/MainWindow.fxml"));
         
         Scene scene = new Scene(root);
         scene.setFill(null);
