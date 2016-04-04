@@ -15,6 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Background;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -37,6 +38,8 @@ public class MainWindowController implements Initializable {
     Button btnadmin;
     @FXML
     Button btnhome;
+    @FXML
+    Pane pnswap;
     Boolean up = false;
     
     @Override
