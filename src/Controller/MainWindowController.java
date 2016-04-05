@@ -8,6 +8,7 @@ package Controller;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.animation.FadeTransition;
 import javafx.animation.ScaleTransition;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
@@ -62,15 +63,23 @@ public class MainWindowController implements Initializable {
     }
     
     @FXML
-    public void addAction(ActionEvent evt){
+    public void addAction(ActionEvent evt) throws IOException{
         moveup();
+        pnswap.getChildren().clear();
+        pnswap.toFront();
+        Pane sp =(Pane)FXMLLoader.load(getClass().getResource("/FXML/regcompany.fxml"));
+        pnswap.getChildren().add(sp);
+        ftall(pnswap,100,0,1);
     }
     
     @FXML
     public void searchAction(ActionEvent evt) throws IOException{
         moveup();
+        pnswap.getChildren().clear();
+        pnswap.toFront();
         Pane sp =(Pane)FXMLLoader.load(getClass().getResource("/FXML/sfactory.fxml"));
         pnswap.getChildren().add(sp);
+        ftall(pnswap,100,0,1);
     }
     
     @FXML
@@ -81,7 +90,8 @@ public class MainWindowController implements Initializable {
     @FXML
     public void homeAction(ActionEvent evt){
         movedown();
-        pnswap.getChildren().clear();
+        ftall(pnswap,100,1,0);
+        pnswap.toBack();
     }
     
     public void ttally(Node n,int t,double y){
@@ -132,5 +142,14 @@ public class MainWindowController implements Initializable {
             up = false;
         }
     }
-
+    
+    public void ftall(Node n,int t,double from, double to){
+        FadeTransition ft = new FadeTransition();
+        ft.setNode(n);
+        ft.setDuration(Duration.millis(t));
+        ft.setFromValue(from);
+        ft.setToValue(to);
+        ft.play();    
+    }
+    
 }

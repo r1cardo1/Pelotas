@@ -5,11 +5,13 @@
  */
 package TAD;
 
+import java.io.Serializable;
+
 /**
  *
  * @author este_
  */
-public class Pelota {
+public class Pelota implements Serializable{
     private String material;
     private String relleno;
     private String forma;

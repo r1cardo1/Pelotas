@@ -15,17 +15,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Sphere;
 import javafx.scene.transform.Rotate;
 import javafx.util.Duration;
 
-/**
- * FXML Controller class
- *
- * @author este_
- */
+
 public class SelectFactoryWindowController implements Initializable {
 
     @FXML
@@ -33,21 +30,28 @@ public class SelectFactoryWindowController implements Initializable {
     @FXML
     Button btnback;
     
-    
-    
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
     }
     
+    public void stall(Node n,int t,double a){
+        ScaleTransition stall = new ScaleTransition();
+        stall.setNode(n);
+        stall.setByX(a);
+        stall.setByY(a);
+        stall.setDuration(Duration.millis(t));
+        stall.play();
+    }
+    
     @FXML
-    public void focusInAction(ActionEvent evt){
-        ScaleTransition st = new ScaleTransition();
-        st.setNode((Node)evt.getSource());
-        st.setDuration(Duration.millis(100));
-        st.setByX(0.1);
-        st.setByY(0.1);
-        st.play();
+    public void focusInAction(MouseEvent evt){
+        stall((Node)evt.getSource(),50,0.1);
+    }
+    
+    @FXML
+    public void focusOutAction(MouseEvent evt){
+        stall((Node)evt.getSource(),50,-0.10);
     }
 }

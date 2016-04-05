@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="620.0" stylesheets="@../CSS/ball.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.RegcompanyController">
+   <children>
+      <TextField layoutX="184.0" layoutY="122.0" />
+      <TextField layoutX="184.0" layoutY="177.0" />
+      <TextField layoutX="184.0" layoutY="230.0" />
+      <Text fill="WHITE" layoutX="39.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de la empresa" />
+      <Text fill="WHITE" layoutX="91.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rif " />
+      <Text fill="WHITE" layoutX="59.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Direccion FIscal" />
+      <Text fill="WHITE" layoutX="477.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logo" />
+      <ComboBox fx:id="cblogo" layoutX="380.0" layoutY="161.0" prefHeight="139.0" prefWidth="221.0" visibleRowCount="2" />
+      <Button layoutX="404.0" layoutY="379.0" mnemonicParsing="false" styleClass="save-icon" text="Guardar" textFill="WHITE" />
+      <Button layoutX="142.0" layoutY="379.0" mnemonicParsing="false" styleClass="button-back" text="Atras" textFill="WHITE" />
+   </children>
+</Pane>

@@ -13,16 +13,10 @@
       <TableView layoutX="84.0" layoutY="130.0" prefHeight="254.0" prefWidth="455.0">
         <columns>
           <TableColumn prefWidth="83.0" text="Logo" />
-          <TableColumn prefWidth="321.0" text="Nombre de la empresa" />
+          <TableColumn prefWidth="368.0" text="Nombre de la empresa" />
         </columns>
       </TableView>
-      <Button layoutX="142.0" layoutY="402.0" mnemonicParsing="false" styleClass="button-back" text="Atras">
-         <effect>
-            <Reflection />
-         </effect></Button>
-      <Button layoutX="404.0" layoutY="402.0" mnemonicParsing="false" onMouseEntered="#focusInAction" styleClass="button-select" stylesheets="@../CSS/ball.css" text="Seleccionar">
-         <effect>
-            <Reflection />
-         </effect></Button>
+      <Button layoutX="107.0" layoutY="403.0" mnemonicParsing="false" onMouseEntered="#focusInAction" onMouseExited="#focusOutAction" styleClass="button-back" text="Atras" textFill="WHITE" />
+      <Button layoutX="409.0" layoutY="402.0" mnemonicParsing="false" onMouseEntered="#focusInAction" onMouseExited="#focusOutAction" styleClass="button-select" stylesheets="@../CSS/ball.css" text="Seleccionar" textFill="WHITE" />
    </children>
 </Pane>
