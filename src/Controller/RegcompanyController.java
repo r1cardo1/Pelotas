@@ -58,11 +58,11 @@ public class RegcompanyController implements Initializable {
     }
     
     @FXML
-    public void regCompanyAction(ActionEvent evt){
-
+    public void regCompanyAction(ActionEvent evt) throws IOException, ClassNotFoundException{
+        addCompany(name.getText(),rif.getText(),dir.getText(), (Image) cblogo.getSelectionModel().getSelectedItem());
     }
     
-    public void addCompany(String n,String r,String d,String l) throws IOException{
+    public void addCompany(String n,String r,String d,Image l) throws IOException, ClassNotFoundException{
         Empresa cp;
         ArrayList<Empresa> list = new ArrayList<>();
         File f = new File("C:\\AppPelotas\\dbCompany");
@@ -70,8 +70,12 @@ public class RegcompanyController implements Initializable {
         ObjectOutputStream oos = new ObjectOutputStream(fos);
         FileInputStream fis = new FileInputStream(f);
         ObjectInputStream ois = new ObjectInputStream(fis);
-        
-        
-        
+        if(new File("C:\\AppPelotas\\dbCompany").isFile())
+            list = (ArrayList<Empresa>)ois.readObject();
+        cp = new Empresa(n,r,d,l);
+        list.add(cp);
+        oos.writeObject(list);
+        oos.close();
+        ois.close();
     }
 }
