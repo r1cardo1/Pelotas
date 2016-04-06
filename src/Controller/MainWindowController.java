@@ -56,6 +56,11 @@ public class MainWindowController implements Initializable {
         btnhome.setBackground(Background.EMPTY);
     }    
     
+    
+    public MainWindowController(){
+        
+    }
+    
     @FXML
     public void closeAction(ActionEvent evt){
         Stage stage = (Stage)btnclose.getScene().getWindow();

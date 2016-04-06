@@ -16,9 +16,9 @@ public class Empresa implements Serializable{
     private String nombre;
     private String rif;
     private String direccion;
-    private Image logo;
+    private int logo;
 
-    public Empresa(String nombre, String rif, String direccion, Image logo) {
+    public Empresa(String nombre, String rif, String direccion, int logo) {
         this.nombre = nombre;
         this.rif = rif;
         this.direccion = direccion;
@@ -37,7 +37,7 @@ public class Empresa implements Serializable{
         return direccion;
     }
 
-    public Image getLogo() {
+    public int getLogo() {
         return logo;
     }
 
@@ -53,7 +53,7 @@ public class Empresa implements Serializable{
         this.direccion = direccion;
     }
 
-    public void setLogo(Image logo) {
+    public void setLogo(int logo) {
         this.logo = logo;
     }
     

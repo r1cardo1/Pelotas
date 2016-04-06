@@ -8,18 +8,17 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="620.0" stylesheets="@../CSS/ball.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.RegcompanyController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="620.0" style="-fx-background-color: black;" stylesheets="@../CSS/ball.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.RegcompanyController">
    <children>
-      <TextField layoutX="184.0" layoutY="122.0" />
-      <TextField layoutX="184.0" layoutY="177.0" />
-      <TextField layoutX="184.0" layoutY="230.0" />
+      <TextField fx:id="name" layoutX="184.0" layoutY="122.0" />
+      <TextField fx:id="rif" layoutX="184.0" layoutY="177.0" />
+      <TextField fx:id="dir" layoutX="184.0" layoutY="230.0" />
       <Text fill="WHITE" layoutX="39.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de la empresa" />
       <Text fill="WHITE" layoutX="91.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rif " />
       <Text fill="WHITE" layoutX="59.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Direccion FIscal" />
       <Text fill="WHITE" layoutX="477.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logo" />
       <ComboBox fx:id="cblogo" layoutX="380.0" layoutY="161.0" prefHeight="139.0" prefWidth="221.0" visibleRowCount="2" />
-      <Button layoutX="404.0" layoutY="379.0" mnemonicParsing="false" styleClass="save-icon" text="Guardar" textFill="WHITE" />
-      <Button layoutX="142.0" layoutY="379.0" mnemonicParsing="false" styleClass="button-back" text="Atras" textFill="WHITE" />
+      <Button layoutX="266.0" layoutY="376.0" mnemonicParsing="false" onAction="#regCompanyAction" styleClass="save-icon" text="Guardar" textFill="WHITE" />
+      <Label fx:id="result" layoutX="295.0" layoutY="342.0" text="Texto" textFill="WHITE" />
    </children>
 </Pane>
