@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane id="Pane" prefHeight="460.0" prefWidth="620.0" stylesheets="@../CSS/ball.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="Controller.McompanyController">
+   <children>
+      <Button contentDisplay="TOP" layoutX="51.0" layoutY="109.0" mnemonicParsing="false" styleClass="build-personalize" text="Fabricar pelota personalizada" textAlignment="CENTER" wrapText="true" />
+      <Button contentDisplay="TOP" layoutX="397.0" layoutY="109.0" mnemonicParsing="false" prefWidth="172.9" styleClass="view-design" text="Ver diseños Hechos" />
+      <Button contentDisplay="TOP" layoutX="224.0" layoutY="281.0" mnemonicParsing="false" prefWidth="172.9" styleClass="build-make" text="Fabricar Pelota pre-diseñada" />
+      <ImageView fitHeight="140.0" fitWidth="159.0" layoutX="231.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="296.0" layoutY="92.0" text="Label" textFill="WHITE" />
+   </children>
+</Pane>

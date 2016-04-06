@@ -160,3 +160,63 @@ and open the template in the editor.
     -fx-text-fill:white;
 }
 
+.table-view .table-cell {
+    -fx-alignment: CENTER;
+     /* The rest is from caspian.css */
+     
+    -fx-skin: "com.sun.javafx.scene.control.skin.TableCellSkin";
+    -fx-padding: 0.166667em; /* 2px, plus border adds 1px */
+
+    -fx-background-color: transparent;
+    -fx-border-color: transparent -fx-table-cell-border-color transparent transparent;
+    -fx-border-width: 0.083333em; /* 1 */
+    -fx-cell-size: 2.0em; /* 24 */
+    -fx-text-fill: white;
+
+}
+
+.table-row-cell{
+    -fx-background-color: transparent;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em; /* 0 */
+    -fx-border-color: gray;
+
+    
+    
+}
+
+.table-row-cell:odd{
+    -fx-background-color: transparent;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em; /* 0 */  
+}
+
+.table-row-cell:selected {
+    -fx-background-color: transparent;
+    -fx-border-color: white;
+    -fx-border-width:2px;    
+}
+
+.build-personalize{
+    -fx-graphic:url("../images/Design-icon.png");
+    -fx-background-color:transparent;
+    -fx-border-color: white;
+    -fx-border-radius:10px;
+    -fx-text-fill:white;
+}
+
+.view-design{
+    -fx-graphic:url("../images/List-icon.png");
+    -fx-background-color:transparent;
+    -fx-border-color: white;
+    -fx-border-radius:10px;
+    -fx-text-fill:white;
+}
+
+.build-make{
+    -fx-graphic:url("../images/options-icon.png");
+    -fx-background-color:transparent;
+    -fx-border-color: white;
+    -fx-border-radius:10px;
+    -fx-text-fill:white;
+}

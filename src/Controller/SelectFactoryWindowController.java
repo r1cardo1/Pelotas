@@ -17,10 +17,13 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.animation.FadeTransition;
 import javafx.animation.ScaleTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
@@ -30,6 +33,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 
 
@@ -100,5 +104,24 @@ public class SelectFactoryWindowController implements Initializable {
             ois.close();
         }
         return list;
+    }
+    
+    @FXML
+    public void selectAction(ActionEvent evt) throws IOException{
+        if(!tbemp.getSelectionModel().isEmpty()){
+            McompanyController.temp = (TVEmpresa) tbemp.getSelectionModel().getSelectedItem();
+            MainWindowController.pnswap.getChildren().add(1,(Node) FXMLLoader.load(getClass().getResource("/FXML/mcompany.fxml")));
+            ftall(MainWindowController.pnswap.getChildren().get(1),100,0,1);
+            ftall(MainWindowController.pnswap.getChildren().get(0),100,0,1);
+        }
+    }
+    
+    public void ftall(Node n,int t,double from, double to){
+        FadeTransition ft = new FadeTransition();
+        ft.setNode(n);
+        ft.setDuration(Duration.millis(t));
+        ft.setFromValue(from);
+        ft.setToValue(to);
+        ft.play();    
     }
 }
