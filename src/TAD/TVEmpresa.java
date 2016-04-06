@@ -6,6 +6,8 @@
 package TAD;
 
 import javafx.beans.property.SimpleStringProperty;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 /**
  *
@@ -15,13 +17,13 @@ public class TVEmpresa {
     SimpleStringProperty nombre;
     SimpleStringProperty rif;
     SimpleStringProperty direccion;
-    SimpleStringProperty logo;
+    ImageView logo;
 
     public TVEmpresa(String nombre, String rif, String direccion, String logo) {
         this.nombre = new SimpleStringProperty(nombre);
         this.rif = new SimpleStringProperty(rif);
         this.direccion = new SimpleStringProperty(direccion);
-        this.logo = new SimpleStringProperty(logo);
+        this.logo = new ImageView(new Image(logo));
     }
 
     public String getNombre() {
@@ -36,8 +38,8 @@ public class TVEmpresa {
         return direccion.get();
     }
 
-    public String getLogo() {
-        return logo.get();
+    public ImageView getLogo() {
+        return logo;
     }
 
     public void setNombre(String nombre) {
@@ -53,7 +55,7 @@ public class TVEmpresa {
     }
 
     public void setLogo(String logo) {
-        this.logo = new SimpleStringProperty(logo);
+        this.logo = new ImageView(new Image(logo));
     }
     
     

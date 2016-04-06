@@ -86,7 +86,8 @@ public class RegcompanyController implements Initializable {
         
         Empresa cp;
         ArrayList<Empresa> list = new ArrayList<Empresa>();
-        new File("C:\\AppPelotas").mkdirs();
+        if(!new File("C:\\AppPelotas").isDirectory())
+            new File("C:\\AppPelotas").mkdirs();
         File f = new File("C:\\AppPelotas\\dbCompany");
         if(new File("C:\\AppPelotas\\dbCompany").isFile()){
             FileInputStream fis = new FileInputStream(f);
