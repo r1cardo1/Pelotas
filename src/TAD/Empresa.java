@@ -6,7 +6,6 @@
 package TAD;
 
 import java.io.Serializable;
-import javafx.scene.image.Image;
 
 /**
  *
@@ -16,9 +15,9 @@ public class Empresa implements Serializable{
     private String nombre;
     private String rif;
     private String direccion;
-    private int logo;
+    private String logo;
 
-    public Empresa(String nombre, String rif, String direccion, int logo) {
+    public Empresa(String nombre, String rif, String direccion, String logo) {
         this.nombre = nombre;
         this.rif = rif;
         this.direccion = direccion;
@@ -37,7 +36,7 @@ public class Empresa implements Serializable{
         return direccion;
     }
 
-    public int getLogo() {
+    public String getLogo() {
         return logo;
     }
 
@@ -53,7 +52,7 @@ public class Empresa implements Serializable{
         this.direccion = direccion;
     }
 
-    public void setLogo(int logo) {
+    public void setLogo(String logo) {
         this.logo = logo;
     }
     

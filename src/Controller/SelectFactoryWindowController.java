@@ -54,4 +54,8 @@ public class SelectFactoryWindowController implements Initializable {
     public void focusOutAction(MouseEvent evt){
         stall((Node)evt.getSource(),50,-0.10);
     }
+    
+    public void loadTable(){
+        
+    }
 }
