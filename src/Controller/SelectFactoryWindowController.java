@@ -49,6 +49,8 @@ public class SelectFactoryWindowController implements Initializable {
     TableColumn logemp;
     @FXML
     TableColumn nomemp;
+    @FXML
+    Pane pnswapp;
     
 
     @Override
@@ -110,9 +112,9 @@ public class SelectFactoryWindowController implements Initializable {
     public void selectAction(ActionEvent evt) throws IOException{
         if(!tbemp.getSelectionModel().isEmpty()){
             McompanyController.temp = (TVEmpresa) tbemp.getSelectionModel().getSelectedItem();
-            MainWindowController.pnswap.getChildren().add(1,(Node) FXMLLoader.load(getClass().getResource("/FXML/mcompany.fxml")));
-            ftall(MainWindowController.pnswap.getChildren().get(1),100,0,1);
-            ftall(MainWindowController.pnswap.getChildren().get(0),100,0,1);
+            pnswapp.getChildren().add(1, (Node)FXMLLoader.load(getClass().getResource("/FXML/mcompany.fxml")));
+            ftall(pnswapp.getChildren().get(0),100,1,0);
+            ftall(pnswapp.getChildren().get(1),100,0,1);
         }
     }
     
