@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane id="Pane" prefHeight="460.0" prefWidth="620.0" style="-fx-background-color: black;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="Controller.BuildpersController">
+    <stylesheets>
+        <URL value="@/CSS/ball.css" />
+    </stylesheets>
+   <children>
+      <ParallelCamera layoutX="29.0" layoutY="70.0" />
+      <Sphere layoutX="448.0" layoutY="238.0" radius="40.0" />
+      <Label layoutX="338.0" layoutY="110.0" prefHeight="256.0" prefWidth="221.0" />
+   </children>
+</Pane>
