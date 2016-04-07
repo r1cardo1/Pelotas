@@ -10,5 +10,29 @@ package TAD;
  * @author este_
  */
 public class Material {
+    String nombre;
+    String file;
+
+    public Material(String nombre, String file) {
+        this.nombre = nombre;
+        this.file = file;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getFile() {
+        return file;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setFile(String file) {
+        this.file = file;
+    }
+    
     
 }

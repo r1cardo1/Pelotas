@@ -12,7 +12,8 @@ import java.io.Serializable;
  * @author este_
  */
 public class Pelota implements Serializable{
-    private String material;
+    private String nombre;
+    private Material material;
     private String relleno;
     private String forma;
     private String color;
@@ -21,7 +22,8 @@ public class Pelota implements Serializable{
     private int peso;
     private int medidas;
 
-    public Pelota(String material, String relleno, String forma, String color, int freb, int presion, int peso, int medidas) {
+    public Pelota(String nombre,Material material, String relleno, String forma, String color, int freb, int presion, int peso, int medidas) {
+        this.nombre=nombre;
         this.material = material;
         this.relleno = relleno;
         this.forma = forma;
@@ -32,7 +34,7 @@ public class Pelota implements Serializable{
         this.medidas = medidas;
     }
 
-    public String getMaterial() {
+    public Material getMaterial() {
         return material;
     }
 
@@ -64,7 +66,7 @@ public class Pelota implements Serializable{
         return medidas;
     }
 
-    public void setMaterial(String material) {
+    public void setMaterial(Material material) {
         this.material = material;
     }
 
