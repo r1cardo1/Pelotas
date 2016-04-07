@@ -21,8 +21,8 @@
             <Font size="25.0" />
          </font>
       </Label>
-      <Button layoutX="28.0" layoutY="84.0" mnemonicParsing="false" onMouseEntered="#focusInAction" onMouseExited="#focusOutAction" styleClass="minus-icon" />
-      <Button layoutX="81.0" layoutY="84.0" mnemonicParsing="false" onMouseEntered="#focusInAction" onMouseExited="#focusOutAction" styleClass="plus-icon" />
+      <Button layoutX="28.0" layoutY="84.0" mnemonicParsing="false" onAction="#sizeDownAction" onMouseEntered="#focusInAction" onMouseExited="#focusOutAction" styleClass="minus-icon" />
+      <Button layoutX="81.0" layoutY="84.0" mnemonicParsing="false" onAction="#sizeUpAction" onMouseEntered="#focusInAction" onMouseExited="#focusOutAction" styleClass="plus-icon" />
       <Label layoutX="34.0" layoutY="46.0" text="Tamaño" textFill="WHITE">
          <font>
             <Font size="25.0" />
@@ -192,7 +192,7 @@
             <Font size="25.0" />
          </font>
       </Label>
-      <Button layoutX="186.0" layoutY="84.0" mnemonicParsing="false" onMouseEntered="#focusInAction" onMouseExited="#focusOutAction" styleClass="previus-icon" />
-      <Button layoutX="240.0" layoutY="84.0" mnemonicParsing="false" onMouseEntered="#focusInAction" onMouseExited="#focusOutAction" styleClass="next-icon" />
+      <Button layoutX="186.0" layoutY="84.0" mnemonicParsing="false" onAction="#changeBall" onMouseEntered="#focusInAction" onMouseExited="#focusOutAction" styleClass="previus-icon" />
+      <Button layoutX="240.0" layoutY="84.0" mnemonicParsing="false" onAction="#changeBall" onMouseEntered="#focusInAction" onMouseExited="#focusOutAction" styleClass="next-icon" />
    </children>
 </Pane>
