@@ -6,16 +6,23 @@
 package Controller;
 
 import TAD.TVEmpresa;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.animation.FadeTransition;
 import javafx.animation.ScaleTransition;
 import static javafx.application.ConditionalFeature.FXML;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
+import javafx.scene.shape.Box;
+import javafx.scene.shape.Sphere;
 import javafx.util.Duration;
 
 /**
@@ -29,6 +36,9 @@ public class McompanyController implements Initializable {
     @FXML
     Label name;
     static TVEmpresa temp;
+    @FXML
+    Pane swappn;
+
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -57,5 +67,21 @@ public class McompanyController implements Initializable {
         stall.setByY(a);
         stall.setDuration(Duration.millis(t));
         stall.play();
+    }
+    
+    @FXML
+    public void buildPersAction(ActionEvent evt) throws IOException{
+        swappn.getChildren().add(1, (Node)FXMLLoader.load(getClass().getResource("/FXML/buildpers.fxml")));
+            ftall(swappn.getChildren().get(0),100,1,0);
+            ftall(swappn.getChildren().get(1),100,0,1);
+    }
+    
+        public void ftall(Node n,int t,double from, double to){
+        FadeTransition ft = new FadeTransition();
+        ft.setNode(n);
+        ft.setDuration(Duration.millis(t));
+        ft.setFromValue(from);
+        ft.setToValue(to);
+        ft.play();
     }
 }

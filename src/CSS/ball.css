@@ -220,3 +220,28 @@ and open the template in the editor.
     -fx-border-radius:10px;
     -fx-text-fill:white;
 }
+
+.border-ball{
+    -fx-border-color: white;
+    -fx-border-radius: 10px;
+}
+
+.minus-icon{
+    -fx-background-color:transparent;
+    -fx-graphic:url("../images/Minus-icon.png");
+}
+
+.plus-icon{
+    -fx-background-color:transparent;
+    -fx-graphic:url("../images/plus-icon.png");
+}
+
+.previus-icon{
+    -fx-background-color:transparent;
+    -fx-graphic:url("../images/previus-icon.png");
+}
+
+.next-icon{
+    -fx-background-color:transparent;
+    -fx-graphic:url("../images/next-icon.png");
+}

@@ -8,15 +8,19 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane id="Pane" prefHeight="460.0" prefWidth="620.0" stylesheets="@../CSS/ball.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.McompanyController">
+<Pane id="Pane" fx:id="swappn" prefHeight="460.0" prefWidth="620.0" stylesheets="@../CSS/ball.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.McompanyController">
    <children>
-      <Button contentDisplay="TOP" layoutX="51.0" layoutY="109.0" mnemonicParsing="false" onMouseEntered="#focusInAction" onMouseExited="#focusOutAction" styleClass="build-personalize" text="Fabricar pelota personalizada" textAlignment="CENTER" wrapText="true" />
-      <Button contentDisplay="TOP" layoutX="397.0" layoutY="109.0" mnemonicParsing="false" onMouseEntered="#focusInAction" onMouseExited="#focusOutAction" prefWidth="172.9" styleClass="view-design" text="Ver diseños Hechos" />
-      <Button contentDisplay="TOP" layoutX="224.0" layoutY="281.0" mnemonicParsing="false" onMouseEntered="#focusInAction" onMouseExited="#focusOutAction" prefWidth="172.9" styleClass="build-make" text="Fabricar Pelota pre-diseñada" />
-      <ImageView fx:id="logo" fitHeight="84.0" fitWidth="85.0" layoutX="269.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="name" layoutX="287.0" layoutY="79.0" text="Label" textFill="WHITE">
-         <font>
-            <Font name="Comic Sans MS" size="20.0" />
-         </font></Label>
+       <Pane id="Pane" prefHeight="460.0" prefWidth="620.0">
+           <children>
+            <Button contentDisplay="TOP" layoutX="51.0" layoutY="109.0" mnemonicParsing="false" onAction="#buildPersAction" onMouseEntered="#focusInAction" onMouseExited="#focusOutAction" styleClass="build-personalize" text="Fabricar pelota personalizada" textAlignment="CENTER" wrapText="true" />
+            <Button contentDisplay="TOP" layoutX="397.0" layoutY="109.0" mnemonicParsing="false" onMouseEntered="#focusInAction" onMouseExited="#focusOutAction" prefWidth="172.9" styleClass="view-design" text="Ver diseños Hechos" />
+            <Button contentDisplay="TOP" layoutX="224.0" layoutY="281.0" mnemonicParsing="false" onMouseEntered="#focusInAction" onMouseExited="#focusOutAction" prefWidth="172.9" styleClass="build-make" text="Fabricar Pelota pre-diseñada" />
+            <ImageView fx:id="logo" fitHeight="84.0" fitWidth="85.0" layoutX="269.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="name" layoutX="287.0" layoutY="79.0" text="Label" textFill="WHITE">
+                <font>
+                    <Font name="Comic Sans MS" size="20.0" />
+                </font></Label>
+            </children>
+       </Pane>
    </children>
 </Pane>

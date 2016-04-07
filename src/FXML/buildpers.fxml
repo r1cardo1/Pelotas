@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.shape.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
@@ -8,13 +9,85 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane id="Pane" prefHeight="460.0" prefWidth="620.0" style="-fx-background-color: black;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="Controller.BuildpersController">
-    <stylesheets>
-        <URL value="@/CSS/ball.css" />
-    </stylesheets>
+<Pane id="Pane" prefHeight="460.0" prefWidth="620.0" stylesheets="@../CSS/ball.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.BuildpersController">
    <children>
       <ParallelCamera layoutX="29.0" layoutY="70.0" />
-      <Sphere layoutX="448.0" layoutY="238.0" radius="40.0" />
-      <Label layoutX="338.0" layoutY="110.0" prefHeight="256.0" prefWidth="221.0" />
+      <Sphere fx:id="sball" layoutX="455.0" layoutY="250.0" radius="40.0" />
+      <Box fx:id="cball" depth="40.0" height="40.0" layoutX="455.0" layoutY="250.0" width="40.0" />
+      <Label layoutX="347.0" layoutY="131.0" prefHeight="256.0" prefWidth="221.0" styleClass="border-ball" />
+      <Label layoutX="382.0" layoutY="49.0" text="Vista Previa " textFill="WHITE">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Button layoutX="28.0" layoutY="84.0" mnemonicParsing="false" onMouseEntered="#focusInAction" onMouseExited="#focusOutAction" styleClass="minus-icon" />
+      <Button layoutX="81.0" layoutY="84.0" mnemonicParsing="false" onMouseEntered="#focusInAction" onMouseExited="#focusOutAction" styleClass="plus-icon" />
+      <Label layoutX="34.0" layoutY="46.0" text="Tamaño" textFill="WHITE">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="76.0" layoutY="131.0" text="Color - Textura" textFill="WHITE">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <TabPane layoutX="21.0" layoutY="169.0" prefHeight="218.0" prefWidth="301.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Colores">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+          <Tab text="Materiales">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TabPane prefHeight="192.0" prefWidth="301.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab text="Metal">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                              </content>
+                            </Tab>
+                            <Tab text="Madera">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                              </content>
+                            </Tab>
+                              <Tab text="Goma">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                </content>
+                              </Tab>
+                              <Tab text="Plastico">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                </content>
+                              </Tab>
+                              <Tab text="Cuero">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                </content>
+                              </Tab>
+                              <Tab text="Otros">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <Label layoutX="205.0" layoutY="46.0" text="Forma" textFill="WHITE">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Button layoutX="186.0" layoutY="84.0" mnemonicParsing="false" onMouseEntered="#focusInAction" onMouseExited="#focusOutAction" styleClass="previus-icon" />
+      <Button layoutX="240.0" layoutY="84.0" mnemonicParsing="false" onMouseEntered="#focusInAction" onMouseExited="#focusOutAction" styleClass="next-icon" />
    </children>
 </Pane>
