@@ -62,6 +62,8 @@ import javax.imageio.ImageIO;
 public class BuildpersController implements Initializable {
 
     @FXML
+    GridPane panPred;
+    @FXML
     Label msg;
     @FXML
     TextField name;
@@ -107,7 +109,8 @@ public class BuildpersController implements Initializable {
         loadOtherGrid();
         loadLeatherGrid();
         loadPlasticGrid();
-        loadColorGrid();        
+        loadColorGrid();  
+        loadPredesign();
         mat.selectedToggleProperty().addListener(new ChangeListener<Toggle>(){
             public void changed(ObservableValue<? extends Toggle> ov,
                 Toggle toggle, Toggle new_toggle) {
@@ -385,6 +388,40 @@ public class BuildpersController implements Initializable {
                     bt.setGraphic(pic);
                     bt.setToggleGroup(mat);
                     panColor.add(bt, imageCol, imageRow);
+                    imageCol++;
+                    if(imageCol > 1){
+                      // Reset Column
+                      imageCol=0;
+                      // Next Row
+                      imageRow++;
+                    }
+                }
+            }
+    }
+    
+    public void loadPredesign(){
+        File dir = new File("src\\images\\textures\\predesign");
+            if(dir.isDirectory()){
+                ImageView pic;
+                RadioButton bt;
+                panPred.setHgap(5);
+                panPred.setVgap(5);
+                panPred.setPadding(new Insets(10));
+                File f[] = dir.listFiles();
+                int imageCol=0;
+                int imageRow=2;
+                for(int i=0;i<f.length;i++){
+                    System.out.println(f[i].getName());
+                    pic = new ImageView(new Image("/images/textures/predesign/"+f[i].getName()));
+                    pic.setFitHeight(110);
+                    pic.setFitWidth(110);
+                    file.add(f[i].getName());
+                    path.add("/images/textures/predesign/");
+                    bt= new RadioButton(f[i].getName());
+                    bt.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
+                    bt.setGraphic(pic);
+                    bt.setToggleGroup(mat);
+                    panPred.add(bt, imageCol, imageRow);
                     imageCol++;
                     if(imageCol > 1){
                       // Reset Column
