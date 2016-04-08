@@ -71,7 +71,16 @@ public class McompanyController implements Initializable {
     
     @FXML
     public void buildPersAction(ActionEvent evt) throws IOException{
+        BuildpersController.temp = this.temp;
         swappn.getChildren().add(1, (Node)FXMLLoader.load(getClass().getResource("/FXML/buildpers.fxml")));
+            ftall(swappn.getChildren().get(0),100,1,0);
+            ftall(swappn.getChildren().get(1),100,0,1);
+    }
+    
+    @FXML
+    public void viewListAction(ActionEvent evt) throws IOException{
+        ListBallsController.temp = this.temp;
+        swappn.getChildren().add(1, (Node)FXMLLoader.load(getClass().getResource("/FXML/listBalls.fxml")));
             ftall(swappn.getChildren().get(0),100,1,0);
             ftall(swappn.getChildren().get(1),100,0,1);
     }

@@ -5,11 +5,13 @@
  */
 package TAD;
 
+import java.io.Serializable;
+
 /**
  *
  * @author este_
  */
-public class Material {
+public class Material implements Serializable{
     String nombre;
     String file;
 

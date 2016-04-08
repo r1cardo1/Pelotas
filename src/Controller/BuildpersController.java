@@ -5,7 +5,19 @@
  */
 package Controller;
 
+import TAD.Empresa;
+import TAD.Material;
+import TAD.Pelota;
+import TAD.TVEmpresa;
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
+import java.io.DataOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -16,19 +28,23 @@ import javafx.animation.ScaleTransition;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.ContentDisplay;
+import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TabPane;
+import javafx.scene.control.TextField;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.image.WritableImage;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.PhongMaterial;
@@ -36,6 +52,7 @@ import javafx.scene.shape.Box;
 import javafx.scene.shape.Sphere;
 import javafx.scene.transform.Rotate;
 import javafx.util.Duration;
+import javax.imageio.ImageIO;
 
 /**
  * FXML Controller class
@@ -44,7 +61,16 @@ import javafx.util.Duration;
  */
 public class BuildpersController implements Initializable {
 
-
+    @FXML
+    Label msg;
+    @FXML
+    TextField name;
+    @FXML
+    Label pres;
+    @FXML
+    Label material;
+    @FXML
+    Label tamano;
     @FXML
     Box cball;
     @FXML
@@ -67,6 +93,9 @@ public class BuildpersController implements Initializable {
     ArrayList<String> file = new ArrayList<>();
     ArrayList<String> path = new ArrayList<>();
     boolean osball = true;
+    int presion=0;
+    static TVEmpresa temp;
+    String direc;
     
     
     @Override
@@ -85,6 +114,7 @@ public class BuildpersController implements Initializable {
                     if (new_toggle!=null){
                         RadioButton bt = (RadioButton)new_toggle;
                         texturize(path.get(file.indexOf(bt.getText()))+bt.getText());
+                        direc=path.get(file.indexOf(bt.getText()))+bt.getText();
                     }
             }
         });
@@ -93,7 +123,7 @@ public class BuildpersController implements Initializable {
         cball.setRotationAxis(Rotate.Y_AXIS);
         initSBall();
         initCBall();
-        
+        pres.setText(Integer.toString(presion)+" Lbs.");
         
     }    
     
@@ -162,7 +192,7 @@ public class BuildpersController implements Initializable {
     }
     
     public void loadWoodGrid(){
-        File dir = new File("src\\images\\textures\\wood");
+        File dir = new File("src\\images\\textures\\madera");
             if(dir.isDirectory()){
                 ImageView pic;
                 RadioButton bt;
@@ -174,11 +204,11 @@ public class BuildpersController implements Initializable {
                 int imageRow=2;
                 for(int i=0;i<f.length;i++){
                     System.out.println(f[i].getName());
-                    pic = new ImageView(new Image("/images/textures/wood/"+f[i].getName()));
+                    pic = new ImageView(new Image("/images/textures/madera/"+f[i].getName()));
                     pic.setFitHeight(110);
                     pic.setFitWidth(110);
                     file.add(f[i].getName());
-                    path.add("/images/textures/wood/");
+                    path.add("/images/textures/madera/");
                     bt= new RadioButton(f[i].getName());
                     bt.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
                     bt.setGraphic(pic);
@@ -196,7 +226,7 @@ public class BuildpersController implements Initializable {
     }
     
     public void loadRubberGrid(){
-        File dir = new File("src\\images\\textures\\rubber");
+        File dir = new File("src\\images\\textures\\goma");
             if(dir.isDirectory()){
                 ImageView pic;
                 RadioButton bt;
@@ -208,11 +238,11 @@ public class BuildpersController implements Initializable {
                 int imageRow=2;
                 for(int i=0;i<f.length;i++){
                     System.out.println(f[i].getName());
-                    pic = new ImageView(new Image("/images/textures/rubber/"+f[i].getName()));
+                    pic = new ImageView(new Image("/images/textures/goma/"+f[i].getName()));
                     pic.setFitHeight(110);
                     pic.setFitWidth(110);
                     file.add(f[i].getName());
-                    path.add("/images/textures/rubber/");
+                    path.add("/images/textures/goma/");
                     bt= new RadioButton(f[i].getName());
                     bt.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
                     bt.setGraphic(pic);
@@ -230,7 +260,7 @@ public class BuildpersController implements Initializable {
     }
     
     public void loadPlasticGrid(){
-        File dir = new File("src\\images\\textures\\plastic");
+        File dir = new File("src\\images\\textures\\plastico");
             if(dir.isDirectory()){
                 ImageView pic;
                 RadioButton bt;
@@ -242,11 +272,11 @@ public class BuildpersController implements Initializable {
                 int imageRow=2;
                 for(int i=0;i<f.length;i++){
                     //System.out.println(f[i].getName());
-                    pic = new ImageView(new Image("/images/textures/plastic/"+f[i].getName()));
+                    pic = new ImageView(new Image("/images/textures/plastico/"+f[i].getName()));
                     pic.setFitHeight(110);
                     pic.setFitWidth(110);
                     file.add(f[i].getName());
-                    path.add("/images/textures/plastic/");
+                    path.add("/images/textures/plastico/");
                     bt= new RadioButton(f[i].getName());
                     bt.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
                     bt.setGraphic(pic);
@@ -264,7 +294,7 @@ public class BuildpersController implements Initializable {
     }
     
     public void loadLeatherGrid(){
-        File dir = new File("src\\images\\textures\\leather");
+        File dir = new File("src\\images\\textures\\cuero");
         
             if(dir.isDirectory()){
                 RadioButton bt;
@@ -277,11 +307,11 @@ public class BuildpersController implements Initializable {
                 int imageRow=2;
                 for(int i=0;i<f.length;i++){
                     System.out.println(f[i].getName());
-                    pic = new ImageView(new Image("/images/textures/leather/"+f[i].getName()));
+                    pic = new ImageView(new Image("/images/textures/cuero/"+f[i].getName()));
                     pic.setFitHeight(110);
                     pic.setFitWidth(110);
                     file.add(f[i].getName());
-                    path.add("/images/textures/leather/");
+                    path.add("/images/textures/cuero/");
                     bt= new RadioButton(f[i].getName());
                     bt.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
                     bt.setGraphic(pic);
@@ -299,7 +329,7 @@ public class BuildpersController implements Initializable {
     }
     
     public void loadOtherGrid(){
-        File dir = new File("src\\images\\textures\\other");
+        File dir = new File("src\\images\\textures\\otro");
             if(dir.isDirectory()){
                 ImageView pic;
                 RadioButton bt;
@@ -311,11 +341,11 @@ public class BuildpersController implements Initializable {
                 int imageRow=2;
                 for(int i=0;i<f.length;i++){
                     System.out.println(f[i].getName());
-                    pic = new ImageView(new Image("/images/textures/other/"+f[i].getName()));
+                    pic = new ImageView(new Image("/images/textures/otro/"+f[i].getName()));
                     pic.setFitHeight(110);
                     pic.setFitWidth(110);
                     file.add(f[i].getName());
-                    path.add("/images/textures/other/");
+                    path.add("/images/textures/otro/");
                     bt= new RadioButton(f[i].getName());
                     bt.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
                     bt.setGraphic(pic);
@@ -371,27 +401,36 @@ public class BuildpersController implements Initializable {
     phongMaterial.setDiffuseMap(new Image(getClass().getResource(path).toExternalForm()));
     sball.setMaterial(phongMaterial);
     cball.setMaterial(phongMaterial);
+    String[] mat = path.split("/");
+    material.setText(mat[mat.length-2]);
     }
     
     @FXML
     public void sizeUpAction(ActionEvent evt){
-        if(osball)
+        if(osball){
             sball.setRadius(sball.getRadius()+2);
+            tamano.setText(Double.toString(sball.getRadius())+" Cm");
+        }
         else{
             cball.setWidth(cball.getWidth()+2);
             cball.setHeight(cball.getHeight()+2);
             cball.setDepth(cball.getDepth()+2);
+            tamano.setText(Double.toString(cball.getWidth())+" Cm");
         }
+        
     }
     
     @FXML
     public void sizeDownAction(ActionEvent evt){
-        if(osball)
+        if(osball){
             sball.setRadius(sball.getRadius()-2);
+            tamano.setText(Double.toString(sball.getRadius())+" Cm");
+        }
         else{
             cball.setWidth(cball.getWidth()-2);
             cball.setHeight(cball.getHeight()-2);
             cball.setDepth(cball.getDepth()-2);
+            tamano.setText(Double.toString(cball.getWidth())+" Cm");
         }
     }
     
@@ -414,8 +453,7 @@ public class BuildpersController implements Initializable {
         rtc.setCycleCount(INDEFINITE);
         rtc.setByAngle(360);
         rtc.play();
-    }
-    
+    }    
 
     @FXML
     public void changeBall(){
@@ -423,12 +461,87 @@ public class BuildpersController implements Initializable {
             sball.setOpacity(0);
             cball.setOpacity(1);
             osball=false;
-            
+            tamano.setText(Double.toString(cball.getWidth())+" Cm");
         }else{
             sball.setOpacity(1);
             cball.setOpacity(0);
             osball=true;
+            tamano.setText(Double.toString(sball.getRadius())+" Cm");
         }
         
     }
+    
+    @FXML
+    public void presUp(ActionEvent evt){
+        presion+=5;
+        pres.setText(Integer.toString(presion)+" Lbs.");
+    }
+    
+    @FXML
+    public void presDown(ActionEvent evt){
+        presion-=5;
+        pres.setText(Integer.toString(presion)+" Lbs.");
+    }
+    
+    public void saveAction(ActionEvent evt) throws IOException, ClassNotFoundException{          
+        if(!name.getText().isEmpty()){
+        Empresa cp;
+        Boolean opc = true;
+        ArrayList<Empresa> list = new ArrayList<Empresa>();
+        if(!new File("C:\\AppPelotas").isDirectory())
+            new File("C:\\AppPelotas").mkdirs();
+        File f = new File("C:\\AppPelotas\\dbCompany");
+        
+        if(new File("C:\\AppPelotas\\dbCompany").isFile()){
+            FileInputStream fis = new FileInputStream(f);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            list = (ArrayList<Empresa>)ois.readObject();
+            ois.close();
+        }        
+        
+        for(int i=0;i<list.size();i++){
+            if(list.get(i).getRif().equals(temp.getRif())){
+                System.out.println("YES IT FIT");
+                if(!list.get(i).listaPelotas.isEmpty())
+                for(int j=0;j<list.get(i).listaPelotas.size();j++){
+                    if(list.get(i).listaPelotas.get(j).nombre.equals(name.getText())){
+                        msg.setText("Error, la pelota ya existe");
+                        msg.setOpacity(1);
+                        opc=false;
+                    }
+                    }
+                    if(opc){
+                        String[] nombre = direc.split("/");
+                        String forma;
+                        if(osball)
+                            forma="Esfera";
+                        else
+                            forma="Cubica";
+                        if(osball)
+                            list.get(i).listaPelotas.add(new Pelota(name.getText(),new Material(nombre[nombre.length-2],direc),forma,presion,presion,(int) sball.getRadius()));
+                        else
+                            list.get(i).listaPelotas.add(new Pelota(name.getText(),new Material(nombre[nombre.length-2],direc),forma,presion,presion,(int) cball.getWidth()));
+                
+                        FileOutputStream fos = new FileOutputStream(f);
+                        ObjectOutputStream oos = new ObjectOutputStream(fos);
+                        oos.writeObject(list);
+                        oos.close();
+                
+                        WritableImage im = sball.snapshot(null,null);        
+                        BufferedImage image =SwingFXUtils.fromFXImage(im,null);        
+                        BufferedImage imageRGB = new BufferedImage(image.getWidth(),image.getHeight(),BufferedImage.OPAQUE);
+                        Graphics2D graphics = imageRGB.createGraphics();
+                        graphics.drawImage(image,0,0,null);
+                        ImageIO.write(imageRGB,"jpg",new File("src/images/data/"+name.getText()+".jpg"));
+                        graphics.dispose();                        
+                        msg.setText("Guardado con Exito.");
+                        msg.setOpacity(1);
+                    }
+            }
+        }
+        }
+        
+    }
+    
+    
 }

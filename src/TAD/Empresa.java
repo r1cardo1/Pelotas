@@ -6,6 +6,7 @@
 package TAD;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -16,6 +17,7 @@ public class Empresa implements Serializable{
     private String rif;
     private String direccion;
     private String logo;
+    public ArrayList<Pelota> listaPelotas = new ArrayList<>();
 
     public Empresa(String nombre, String rif, String direccion, String logo) {
         this.nombre = nombre;

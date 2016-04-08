@@ -5,7 +5,11 @@
  */
 package Controller;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.animation.FadeTransition;
@@ -155,6 +159,7 @@ public class MainWindowController implements Initializable {
         ft.setFromValue(from);
         ft.setToValue(to);
         ft.play();    
-    }
+    }    
     
+
 }

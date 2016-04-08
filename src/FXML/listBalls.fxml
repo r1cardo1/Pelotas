@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane id="Pane" prefHeight="460.0" prefWidth="620.0" style="-fx-background-color: black;" stylesheets="@../CSS/ball.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ListBallsController">
+   <children>
+       <Pane />
+      <TableView fx:id="tvball" layoutX="84.0" layoutY="73.0" prefHeight="303.0" prefWidth="466.0">
+        <columns>
+          <TableColumn fx:id="name" editable="false" prefWidth="217.0" resizable="false" text="Nombre de la pelota" />
+          <TableColumn fx:id="preview" editable="false" prefWidth="245.0" resizable="false" text="Vista Previa" />
+        </columns>
+      </TableView>
+   </children>
+</Pane>

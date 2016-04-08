@@ -13,8 +13,7 @@
        <Pane id="Pane" prefHeight="460.0" prefWidth="620.0">
            <children>
             <Button contentDisplay="TOP" layoutX="51.0" layoutY="109.0" mnemonicParsing="false" onAction="#buildPersAction" onMouseEntered="#focusInAction" onMouseExited="#focusOutAction" styleClass="build-personalize" text="Fabricar pelota personalizada" textAlignment="CENTER" wrapText="true" />
-            <Button contentDisplay="TOP" layoutX="397.0" layoutY="109.0" mnemonicParsing="false" onMouseEntered="#focusInAction" onMouseExited="#focusOutAction" prefWidth="172.9" styleClass="view-design" text="Ver diseños Hechos" />
-            <Button contentDisplay="TOP" layoutX="224.0" layoutY="281.0" mnemonicParsing="false" onMouseEntered="#focusInAction" onMouseExited="#focusOutAction" prefWidth="172.9" styleClass="build-make" text="Fabricar Pelota pre-diseñada" />
+            <Button contentDisplay="TOP" layoutX="397.0" layoutY="109.0" mnemonicParsing="false" onAction="#viewListAction" onMouseEntered="#focusInAction" onMouseExited="#focusOutAction" prefWidth="172.9" styleClass="view-design" text="Ver diseños Hechos" />
             <ImageView fx:id="logo" fitHeight="84.0" fitWidth="85.0" layoutX="269.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true" />
             <Label fx:id="name" layoutX="287.0" layoutY="79.0" text="Label" textFill="WHITE">
                 <font>

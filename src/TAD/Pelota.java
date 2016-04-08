@@ -12,7 +12,7 @@ import java.io.Serializable;
  * @author este_
  */
 public class Pelota implements Serializable{
-    private String nombre;
+    public String nombre;
     private Material material;
     private String relleno;
     private String forma;
@@ -22,13 +22,9 @@ public class Pelota implements Serializable{
     private int peso;
     private int medidas;
 
-    public Pelota(String nombre,Material material, String relleno, String forma, String color, int freb, int presion, int peso, int medidas) {
+    public Pelota(String nombre,Material material, String forma,int presion, int peso, int medidas) {
         this.nombre=nombre;
         this.material = material;
-        this.relleno = relleno;
-        this.forma = forma;
-        this.color = color;
-        this.freb = freb;
         this.presion = presion;
         this.peso = peso;
         this.medidas = medidas;

@@ -10,20 +10,20 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane id="Pane" prefHeight="460.0" prefWidth="620.0" stylesheets="@../CSS/ball.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.BuildpersController">
+<Pane id="Pane" prefHeight="460.0" prefWidth="620.0" style="-fx-background-color: black;" stylesheets="@../CSS/ball.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.BuildpersController">
    <children>
       <ParallelCamera layoutX="29.0" layoutY="70.0" />
       <Sphere fx:id="sball" layoutX="455.0" layoutY="250.0" radius="40.0" />
       <Box fx:id="cball" depth="40.0" height="40.0" layoutX="455.0" layoutY="250.0" width="40.0" />
       <Label layoutX="347.0" layoutY="131.0" prefHeight="256.0" prefWidth="221.0" styleClass="border-ball" />
-      <Label layoutX="382.0" layoutY="49.0" text="Vista Previa " textFill="WHITE">
+      <Label layoutX="401.0" layoutY="38.0" text="Vista Previa " textFill="WHITE">
          <font>
             <Font size="25.0" />
          </font>
       </Label>
-      <Button layoutX="28.0" layoutY="84.0" mnemonicParsing="false" onAction="#sizeDownAction" onMouseEntered="#focusInAction" onMouseExited="#focusOutAction" styleClass="minus-icon" />
-      <Button layoutX="81.0" layoutY="84.0" mnemonicParsing="false" onAction="#sizeUpAction" onMouseEntered="#focusInAction" onMouseExited="#focusOutAction" styleClass="plus-icon" />
-      <Label layoutX="34.0" layoutY="46.0" text="Tamaño" textFill="WHITE">
+      <Button layoutX="14.0" layoutY="84.0" mnemonicParsing="false" onAction="#sizeDownAction" onMouseEntered="#focusInAction" onMouseExited="#focusOutAction" styleClass="minus-icon" />
+      <Button layoutX="67.0" layoutY="84.0" mnemonicParsing="false" onAction="#sizeUpAction" onMouseEntered="#focusInAction" onMouseExited="#focusOutAction" styleClass="plus-icon" />
+      <Label layoutX="20.0" layoutY="46.0" text="Tamaño" textFill="WHITE">
          <font>
             <Font size="25.0" />
          </font>
@@ -187,12 +187,29 @@
           </Tab>
         </tabs>
       </TabPane>
-      <Label layoutX="205.0" layoutY="46.0" text="Forma" textFill="WHITE">
+      <Label layoutX="264.0" layoutY="46.0" text="Forma" textFill="WHITE">
          <font>
             <Font size="25.0" />
          </font>
       </Label>
-      <Button layoutX="186.0" layoutY="84.0" mnemonicParsing="false" onAction="#changeBall" onMouseEntered="#focusInAction" onMouseExited="#focusOutAction" styleClass="previus-icon" />
-      <Button layoutX="240.0" layoutY="84.0" mnemonicParsing="false" onAction="#changeBall" onMouseEntered="#focusInAction" onMouseExited="#focusOutAction" styleClass="next-icon" />
+      <Button layoutX="245.0" layoutY="84.0" mnemonicParsing="false" onAction="#changeBall" onMouseEntered="#focusInAction" onMouseExited="#focusOutAction" styleClass="previus-icon" />
+      <Button layoutX="299.0" layoutY="84.0" mnemonicParsing="false" onAction="#changeBall" onMouseEntered="#focusInAction" onMouseExited="#focusOutAction" styleClass="next-icon" />
+      <Button layoutX="296.0" layoutY="421.0" mnemonicParsing="false" onAction="#saveAction" text="Button" />
+      <Label layoutX="382.0" layoutY="396.0" text="Diametro" textFill="WHITE" />
+      <Label layoutX="382.0" layoutY="413.0" text="Material" textFill="WHITE" />
+      <Label layoutX="382.0" layoutY="430.0" text="Presion de llenado" textFill="WHITE" />
+      <Label fx:id="tamano" layoutX="527.0" layoutY="396.0" textFill="WHITE" />
+      <Label fx:id="material" layoutX="527.0" layoutY="413.0" textFill="WHITE" />
+      <Label fx:id="pres" layoutX="527.0" layoutY="430.0" textFill="WHITE" />
+      <Label layoutX="142.0" layoutY="46.0" text="Presion" textFill="WHITE">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Button layoutX="183.0" layoutY="83.0" mnemonicParsing="false" onAction="#presUp" onMouseEntered="#focusInAction" onMouseExited="#focusOutAction" styleClass="plus-icon" />
+      <Button layoutX="130.0" layoutY="83.0" mnemonicParsing="false" onAction="#presDown" onMouseEntered="#focusInAction" onMouseExited="#focusOutAction" styleClass="minus-icon" />
+      <Text fill="WHITE" layoutX="446.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre" />
+      <TextField fx:id="name" layoutX="392.0" layoutY="92.0" />
+      <Label fx:id="msg" alignment="CENTER" layoutX="20.0" layoutY="425.0" prefHeight="17.0" prefWidth="262.0" textFill="WHITE" />
    </children>
 </Pane>
